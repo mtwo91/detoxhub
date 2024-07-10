@@ -1,5 +1,4 @@
-// Data for the sections
-let h1Texts = ["Wakeup", "Push", "Powerup", "Balance", "Recovery"]; // Add your h1 texts here
+let h1Texts = ["Wakeup", "Push", "Powerup", "Balance", "Recovery"];
 let h3Texts = ["Khởi động ngày mới!", "Làm mới cơ thể!", "Tái tạo năng lượng!", "Thư giãn cân bằng!", "Phục hồi thể chất!"]
 let styleMinute = [
   "none",
@@ -35,9 +34,10 @@ let logoColors = [
   "var(--powerup-background)",
   "var(--balance-background)",
   "var(--recovery-background)"
-]; // Add your logo colors here
+]; 
 let keyframes = ["wave-wakeup-effect", "wave-push-effect", "wave-powerup-effect", "wave-balance-effect", "wave-recovery-effect"]; // Add your keyframes here
-// Normal GSAP animation.......
+
+// GSAP animation.......
 gsap.from(".fruit-image ", { y: "-100vh", delay: 0.5 });
 gsap.to(".fruit-image img", {
   x: "random(-20, 20)",
@@ -58,93 +58,92 @@ const caneLabels = document.querySelector(".cane-labels");
 const sectionContainer = document.querySelector(".section-container");
 const lineMinute = document.querySelector(".line-minute")
 const lineHour = document.querySelector(".line-hour")
-// Set index and current position
+// set index and current position
 let index = 0;
 let currentIndex = 0;
 let currentPosition = 0;
 
-// Add event listeners to the buttons
+// Prev + Next
 nextButton.addEventListener("click", () => {
-  // Decrease the current position by 100% (to the left)
   if (currentPosition > -400) {
     currentPosition -= 100;
-    // Update the left position of the cane-labels
-    caneLabels.style.left = `${currentPosition}%`;
-    sectionContainer.style.left = `${currentPosition}%`;
+  } else {
+    currentPosition = 0;
   }
-  // Increment index and currentIndex
-  currentIndex++;
-  // Update the h1 text if currentIndex is less than the length of h1Texts
-  if (currentIndex < h1Texts.length) {
-    document.querySelector(".h1").innerHTML = h1Texts[currentIndex];
-  }
-  if (currentIndex < h3Texts.length) {
-    document.querySelector(".title-detox").innerHTML = h3Texts[currentIndex];
-  }
-  // Gasp animation for next section components
+
+  // update the left position of the cane-labels
+  caneLabels.style.left = `${currentPosition}%`;
+  sectionContainer.style.left = `${currentPosition}%`;
+
+  // loop back to the start
+  currentIndex = (currentIndex + 1) % h1Texts.length;
+
+  // update the h1 text
+  document.querySelector(".h1").innerHTML = h1Texts[currentIndex];
+  document.querySelector(".title-detox").innerHTML = h3Texts[currentIndex];
+
+  // gasp animation next
   gsap.to(".logo-colors", {
     opacity: 1,
     duration: 1,
     color: logoColors[currentIndex]
   });
   gsap.from(".h1", { y: "20%", x: "0%", opacity: 0, duration: 0.5 });
-  gsap.from(".fruit-image ", { y: "-100vh", delay: 0.4, duration: 0.4 });
+  gsap.from(".fruit-image", { y: "-100vh", delay: 0.4, duration: 0.4 });
 
-  // Disable the nextButton if the last section is active
-  if (currentIndex === h1Texts.length - 1) {
-    nextButton.style.display = "none";
-  }
-  // Enable the prevButton if it's not the first section
-  if (currentIndex > 0) {
-    prevButton.style.display = "block";
-  }
-  // Button colors and animations
-  nextButton.style.color = logoColors[currentIndex + 1];
-  prevButton.style.color = logoColors[currentIndex - 1];
-  nextButton.style.animationName = keyframes[currentIndex + 1];
-  prevButton.style.animationName = keyframes[currentIndex - 1];
-  // Clock time
+  // enable the prevButton if it's not the first section
+  prevButton.style.display = currentIndex > 0 ? "block" : "none";
+
+  // button colors and animations
+  nextButton.style.color = logoColors[currentIndex + 1] || logoColors[0];
+  prevButton.style.color = logoColors[currentIndex - 1] || logoColors[logoColors.length - 1];
+  nextButton.style.animationName = keyframes[currentIndex + 1] || keyframes[0];
+  prevButton.style.animationName = keyframes[currentIndex - 1] || keyframes[keyframes.length - 1];
+
+  // clock time
   lineMinute.style.animation = styleMinute[currentIndex];
   lineHour.style.animation = styleHour[currentIndex];
 });
-// Add event listeners to the buttons
+
+// add event listeners to the buttons
 prevButton.addEventListener("click", () => {
   if (currentPosition < 0) {
     currentPosition += 100;
-    // Update the left position of the cane-labels
-    caneLabels.style.left = `${currentPosition}%`;
-    sectionContainer.style.left = `${currentPosition}%`;
-    sectionContainer.style.transition = `all 0.5s ease-in-out`;
+  } else {
+    currentPosition = -400;
   }
-  // Decrement index and currentIndex
-  currentIndex--;
-  if (currentIndex >= 0) {
-    document.querySelector(".h1").innerHTML = h1Texts[currentIndex];
-  }
-  if (currentIndex >= 0) {
-    document.querySelector(".title-detox").innerHTML = h3Texts[currentIndex];
-  }
-  // Gasp animation for previous section components
+
+  // update the left position cane-labels
+  caneLabels.style.left = `${currentPosition}%`;
+  sectionContainer.style.left = `${currentPosition}%`;
+  sectionContainer.style.transition = "all 0.5s ease-in-out";
+
+  // decrement index and currentIndex
+  currentIndex = (currentIndex - 1 + h1Texts.length) % h1Texts.length;
+
+  document.querySelector(".h1").innerHTML = h1Texts[currentIndex];
+  document.querySelector(".title-detox").innerHTML = h3Texts[currentIndex];
+
+  // gasp animation for previous section
   gsap.to(".logo-colors", { color: logoColors[currentIndex], duration: 1 });
   gsap.from(".h1", { y: "20%", x: "0%", opacity: 0, duration: 0.5 });
-  gsap.from(".fruit-image ", { y: "100vh", delay: 0.5 });
-  // Enable the nextButton if it was disabled
+  gsap.from(".fruit-image", { y: "100vh", delay: 0.5 });
+
+  // enable the nextButton if it was disabled
   nextButton.style.display = "block";
-  // Disable the prevButton if it's the first section
-  if (currentIndex === 0) {
-    prevButton.style.display = "none";
-  }
-  // Button colors and animations
-  nextButton.style.color = logoColors[currentIndex + 1];
-  prevButton.style.color = logoColors[currentIndex - 1];
-  nextButton.style.animationName = keyframes[currentIndex + 1];
-  prevButton.style.animationName = keyframes[currentIndex - 1];
-    // Left clock time
-    lineMinute.style.animation = styleLeftMinute[currentIndex];
-    lineHour.style.animation = styleLeftHour[currentIndex];
+
+  // button colors and animations
+  nextButton.style.color = logoColors[currentIndex + 1] || logoColors[0];
+  prevButton.style.color = logoColors[currentIndex - 1] || logoColors[logoColors.length - 1];
+  nextButton.style.animationName = keyframes[currentIndex + 1] || keyframes[0];
+  prevButton.style.animationName = keyframes[currentIndex - 1] || keyframes[keyframes.length - 1];
+
+  // left clock time
+  lineMinute.style.animation = styleLeftMinute[currentIndex];
+  lineHour.style.animation = styleLeftHour[currentIndex];
 });
 
-// Map Area
+// Map area
 function showMap(mapId) {
   document.getElementById('map1-iframe').style.display = 'none';
   document.getElementById('map2-iframe').style.display = 'none';
@@ -173,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (index < text.length) {
       textContainer.textContent += text.charAt(index);
       index++;
-      setTimeout(type, 250); // Adjust typing speed here
+      setTimeout(type, 250);
     } else {
       const caret = document.createElement('span');
       caret.classList.add('caret');
@@ -185,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         type();
-        observer.unobserve(entry.target); // Stop observing after the animation starts
+        observer.unobserve(entry.target);
       }
     });
   });
@@ -194,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Footer
-for (var i = 0; i < 128; i++) { // Small numbers look nice too
+for (var i = 0; i < 128; i++) {
   var bubble = document.createElement('div');
   bubble.className = 'bubble';
   bubble.style = `--size:${2 + Math.random() * 4}rem; --distance:${6 + Math.random() * 4}rem; --position:${-5 + Math.random() * 110}%; --time:${2 + Math.random() * 2}s; --delay:${-1 * (2 + Math.random() * 2)}s;`;
@@ -206,37 +205,6 @@ function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// // Slide hidden
-// document.getElementById('toggleButton').addEventListener('click', function() {
-//   var contenthebanube = document.getElementById('content-hebanube');
-//   if (contenthebanube.classList.contains('expanded')) {
-//     contenthebanube.classList.remove('expanded');
-//   } else {
-//     contenthebanube.classList.add('expanded');
-//   }
-// });
-
-// // // PRODUCT
-// // let currentIndexP = 0;
-
-// // function slide(direction) {
-// //     const slider = document.querySelector('.slider-container');
-// //     const products = document.querySelectorAll('.product');
-// //     const totalProducts = products.length;
-// //     const visibleProducts = 3;
-
-// //     currentIndexP += direction;
-
-// //     if (currentIndexP < 0) {
-// //       currentIndexP = totalProducts - visibleProducts;
-// //   } else if (currentIndexP > totalProducts - visibleProducts) {
-// //       currentIndexP = 0;
-// //   }
-
-// //     const offset = -currentIndexP * (100 / visibleProducts);
-// //     slider.style.transform = `translateX(${offset}%)`;
-// // }
-
 // Shipping popup
 document.getElementById('shipping').onclick = function() {
   var shippingpopup = document.getElementById('shipping-popup');
@@ -247,7 +215,7 @@ document.getElementById('shipping').onclick = function() {
   }
 };
 
-// PRODUCT
+// Product
 let currentIndexP = 0;
 
 function slide(direction) {
@@ -348,7 +316,7 @@ jQuery(document).ready(function($){
 			$(this).removeClass('is-visible');
 		}
 	});
-	//close popup when clicking the esc keyboard button
+	//close popup when clicking other
 	$(document).keyup(function(event){
     	if(event.which=='27'){
     		$('.cd-popup').removeClass('is-visible');

@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
 
-/* Common Style */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +11,6 @@ img {
   height: auto;
 }
 body {
-  /* overflow: hidden !important; */
   max-width: 100vw !important;
   scroll-behavior: smooth;
 }
@@ -106,7 +104,7 @@ header {
   border-radius: 0 0 50% 50%;
 }
 .content-hebanube.expanded {
-  max-height: 500px; /* Adjust this value based on your content */  
+  max-height: 500px; 
   display: flex;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
   border-radius: 0 0 50% 50%;
@@ -157,7 +155,7 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  mask-image: url(https://www.yudiz.com/codepen/fruity/cane.svg);
+  mask-image: url(imgs/cane.svg);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-position: center center;
@@ -262,7 +260,6 @@ h1 {
 .section:nth-child(5) {
   background-color: var(--recovery-background);
 }
-/* Add this to your CSS */
 /* Buttons */
 button {
   position: absolute;
@@ -977,8 +974,6 @@ button.next {
   height: 80px;
   cursor: pointer;
   z-index: 99 !important;
-  /* -webkit-backface-visibility: hidden; */
-  /* -webkit-transform: translateZ(0); */
   -webkit-transition: visibility .5s;
   -moz-transition: visibility .5s;
   -o-transition: visibility .5s;
@@ -1060,7 +1055,7 @@ button.next {
     top: 20px;
     left: 20px;
     position: absolute;
-    background: rgba(30, 30, 30, .1) url(https://i.imgur.com/YWJeVO2.png) no-repeat center center;
+    background: rgba(30, 30, 30, .1) url(imgs/phone.png) no-repeat center center;
     background-size: 65%;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
@@ -1179,8 +1174,6 @@ button.next {
   -ms-transform: translateY(-40px);
   -o-transform: translateY(-40px);
   transform: translateY(-40px);
-  /* Force Hardware Acceleration in WebKit */
-  /* -webkit-backface-visibility: hidden; */
   -webkit-transition-property: -webkit-transform;
   -moz-transition-property: -moz-transform;
   transition-property: transform;
