@@ -1,0 +1,286 @@
+/*.......... Responsive.............. */
+@media screen and (max-width: 1550px) {
+    h1 {
+      font-size: 350px !important;
+    }
+    .cane-image {
+      max-width: 15vw;
+    }
+    .image-one {
+      max-width: 250px;
+    }
+    .image-two {
+      max-width: 215px;
+      left: 22%;
+      top: 10%;
+    }
+    .image-three {
+      max-width: 180px;
+    }
+    .image-four {
+      max-width: 260px;
+      right: 40px;
+    }
+  }
+  @media screen and (max-width: 1199px) {
+    h1 {
+      font-size: 300px !important;
+    }
+    .cane-image::after {
+      width: 150%;
+    }
+    .image-one {
+      max-width: 10vw;
+    }
+    .image-two {
+      max-width: 9vw;
+      left: 18%;
+      top: 10%;
+    }
+    .image-three {
+      max-width: 8vw;
+      right: 18%;
+    }
+    .image-four {
+      max-width: 11vw;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    h1 {
+      font-size: 240px !important;
+    }
+    .cane-image {
+      max-width: 250px;
+    }
+    button {
+      height: 80px;
+      width: 80px;
+      top: 90%;
+    }
+    .image-one {
+      max-width: 180px;
+    }
+    .image-two {
+      max-width: 165px;
+      left: 12%;
+      top: 12%;
+    }
+    .image-three {
+      max-width: 150px;
+      right: 12%;
+    }
+    .image-four {
+      max-width: 200px;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    h1 {
+      font-size: 180px !important;
+    }
+    h2 {
+      font-size: 30px;
+    }
+    .cane-image {
+      max-width: 180px;
+    }
+    button {
+      height: 60px;
+      width: 60px;
+      font-size: 20px;
+    }
+    .image-one {
+      max-width: 180px;
+      bottom: 150px;
+    }
+    .image-two {
+      max-width: 145px;
+      left: 12%;
+      top: 15%;
+    }
+    .image-three {
+      max-width: 130px;
+      right: 10%;
+    }
+    .image-four {
+      max-width: 180px;
+      bottom: 150px;
+    }
+  }
+  @media screen and (max-width: 575px) {
+    h1 {
+      font-size: 70px !important;
+    }
+    .cane-image::after {
+      width: 100%;
+    }
+    .image-one {
+      max-width: 25vw;
+    }
+    .image-two {
+      max-width: 20vw;
+      left: 4%;
+      top: 18%;
+    }
+    .image-three {
+      max-width: 18vw;
+      right: 4%;
+    }
+    .image-four {
+      max-width: 25vw;
+      right: 0px;
+    }
+  }
+
+  @media screen and (max-width: 430px) {
+    /* header */
+    header {
+        display: unset;
+        max-height: unset;
+    }
+    .contact {
+        display: none;
+    }
+    .content-hebanube {
+        display: none !important;
+    }
+    .step {
+        overflow: auto;
+        display: flex;
+        max-height: 40vh;
+    }
+    .step div {
+        flex: 0  0 100%;
+        display: unset;
+    }
+    .coc-lon-container {
+        overflow: auto;
+        display: flex;
+        max-width: unset;
+        justify-content: unset;
+    }
+    .coc-lon-container div {
+        flex: unset;
+        float: unset;
+        align-items: unset;
+        display: unset;
+        justify-content: unset;
+        width: 100vw;
+        grid-template-columns: 1fr;
+    }
+    .section-product {
+      padding: 0;
+      margin: 0;
+    }
+    .road-map {
+      height: 15vh;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 0;
+      border: solid 5px #f35151;
+    }
+    .text-container {
+      font-size: 18px;
+    }
+    .xe-day {
+      max-width: 15vh;
+    }
+    .banh-xe {
+      max-width: 5vh;
+      top: 70px;
+      left: 22%;
+    }
+    @keyframes moveLeftToRight {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(65vw);
+      }
+    }
+    .section-add {
+      height: unset;
+    }
+    .section-area {
+      display: unset;
+      height: unset;
+      margin: unset;
+    }
+    .scroll-map {
+      max-width: unset;
+      max-height: 30vh;
+    }
+    .detoxhub-map {
+      max-width: unset;
+    }
+    .content {
+      display: unset;
+      padding: 0 10px;
+    }
+    .footer-main {
+      grid-template-areas: unset;
+    }
+    .title-detox {
+      top: 22%;
+      font-size: 30px;
+      text-align: center;
+    }
+    .step-use {
+      display: none;
+    }
+    .main-clock::before {
+      top: 90%;
+      left: -20%;
+      font-size: 2rem;
+    }
+    .main-clock::after {
+      top: 90%;
+      left: 40%;
+      font-size: 2rem;
+    }
+    .how-to-use {
+      max-height: 50vh;
+      padding: 20px 0;
+      min-height: unset;
+    }
+    .step::-webkit-scrollbar {
+      display: none;
+    }
+    .coc-lon-container::-webkit-scrollbar {
+      display: none;
+    }
+    .text h1 {
+      opacity: 0.5;
+      z-index: 1;
+    }
+    .step-by-step {
+      text-align: center;
+    }
+    .step-by-step img {
+      display: block;
+      margin: 0 auto;
+      max-height: 35vh;
+      width: auto;
+      padding-bottom: 5px;
+    }
+    .arrow {
+      top: 50%;
+    }
+    .coc-lon-title {
+      padding-top: 2vh;
+    }
+    .product {
+      flex: 0 0 100%;
+    }
+    .product-slider {
+      width: 100%;
+    }
+    .map {
+      font-size: 1rem;
+    }
+    .footer-static-content {
+      padding: 20px 0;
+    }
+    .coc-lon-container h3 {
+      margin: 0 120px;
+    }
+  }

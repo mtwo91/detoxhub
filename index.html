@@ -1,0 +1,349 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detox Hub</title>
+    <!-- Kết nối file CSS ở đây -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <script src="gsap.all.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://unpkg.com/swiper/js/swiper.js">  </script> 
+    <script src="https://unpkg.com/swiper/js/swiper.min.js">  </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+<body>
+  <!-- header -->
+  <header>
+    <div class="logo">
+      <div onclick="scrollToTop()" style="cursor: pointer;"><img src="/imgs/detoxhub.png" alt="logo detoxhub" style="width: auto;"></div>
+    </div>
+    <div class="hebanube">
+      <h2 id="toggleButton" class="logo-colors hebanube-click">HEBANUBE</h2>
+      <div class="cd-popup" role="alert">
+        <div class="cd-popup-container">
+          <h2><b style="color: #59b36d; font-weight: 900;">HE</b><b style="color: #f8a03f; font-weight: 900;">BA</b><b style="color: #e8430b; font-weight: 900;">NU</b><b style="color: #5ecff9; font-weight: 900;">BE</b></h2>
+          <li><b style="color: #59b36d; font-weight: 900;">Herbal</b>: Thảo mộc</li>
+          <li><b style="color: #f8a03f; font-weight: 900;">Bartending</b>: Pha chế</li>
+          <li><b style="color: #e8430b; font-weight: 900;">Nutrition</b>: Dinh dưỡng</li>
+          <li><b style="color: #5ecff9; font-weight: 900;">Beauty</b>: Sắc đẹp</li>
+          <p><b>Hebanube</b> – nước Detox chiết xuất từ <b>Tinh chất thảo dược VITRUE</b> kết hợp cùng công thức nước độc quyền đặc biệt của thương hiệu <b>Detox Hub</b>, được chế biến từ trái cây tươi ép ngay trong ngày.</p>
+        </div>
+      </div>
+        <!-- <div class="content-hebanube" id="content-hebanube">
+          <ul>
+            <li><h2 class="logo-colors">HErbal</h2></li>
+            <li><h2 class="logo-colors">BArtending</h2></li>
+            <li><h2 class="logo-colors">NUtrition</h2></li>
+            <li><h2 class="logo-colors">BEauty</h2></li>
+          </ul>
+        </div> -->
+    </div>
+    <div class="contact">
+      <div class="contact-main">
+        <a style="color:unset" href="tel:0792002185"><i class="fas fa-phone-alt"> 0792.002.185</i></a>
+      </div>
+    </div>
+  </header>
+  <!-- main -->
+  <main>
+    <!-- Buttons -->
+    <div>
+      <button id="prevButton" class="wave"><i class="fa-solid fa-chevron-left"></i></button>
+      <button id="nextButton" class="wave"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+    <!-- Clock -->
+    <div>
+      <div class="clock">
+        <div class="main-clock">
+            <div class="container-hour">
+              <div class="line-hour"></div>
+            </div>
+            <div class="container-minute">
+              <div class="line-minute"></div>
+            </div>
+          <img class="logo-clock" src="imgs/logo-clock.png"> 
+          <img src="imgs/clock.png">
+        </div>
+      </div>
+    </div> 
+    <!-- Fixed Sections -->
+    <div class="text">
+      <h3 class="title-detox">Khởi động ngày mới!</h3>
+      <h1 class="h1">Wakeup</h1>
+      <div class="cane-image ">
+        <img src="https://www.yudiz.com/codepen/fruity/cane.svg" alt="cane">
+        <img src="/imgs/Labels.png" alt="" class="cane-labels">
+      </div>
+    </div>
+    <!-- Fixed Sections Ends-->
+    <!-- Fruits Images Section -->
+    <div class="section-container-main">
+      <div class="section-container">
+        <section class="section" id="section1">
+          <div class="fruit-images">
+            <div class="image-one fruit-image"><img src="imgs/can-tay.png" alt="wakeup-image"></div>
+            <div class="image-two fruit-image"><img src="imgs/gan.png" alt="wakeup-image"></div>
+            <div class="image-three fruit-image"><img src="imgs/phoi.png" alt="wakeup-image"></div>
+            <div class="image-four fruit-image"><img src="imgs/noni.png" alt="wakeup-image"></div>
+          </div>
+        </section>
+        <section class="section" id="section2">
+          <div class="fruit-images">
+            <div class="image-one fruit-image"><img src="imgs/dai-trang.png" alt="push-image"></div>
+            <div class="image-two fruit-image"><img src="imgs/da-day.png" alt="push-image"></div>
+            <div class="image-three fruit-image"><img src="imgs/can-tay.png" alt="push-image"></div>
+            <div class="image-four fruit-image"><img src="imgs/gan.png" alt="push-image"></div>
+          </div>
+        </section>
+        <section class="section" id="section3">
+          <div class="fruit-images">
+            <div class="image-one fruit-image"><img src="imgs/phoi.png" alt="powerup-image"></div>
+            <div class="image-two fruit-image"><img src="imgs/noni.png" alt="powerup-image"></div>
+            <div class="image-three fruit-image"><img src="imgs/dai-trang.png" alt="powerup-image"></div>
+            <div class="image-four fruit-image"><img src="imgs/da-day.png" alt="powerup-image"></div>
+          </div>
+        </section>
+        <section class="section" id="section4">
+          <div class="fruit-images">
+            <div class="image-one fruit-image"><img src="imgs/can-tay.png" alt="recovery-image"></div>
+            <div class="image-two fruit-image"><img src="imgs/gan.png" alt="recovery-image"></div>
+            <div class="image-three fruit-image"><img src="imgs/phoi.png" alt="recovery-image"></div>
+            <div class="image-four fruit-image"><img src="imgs/noni.png" alt="recovery-image"></div>
+          </div>
+        </section>
+        <section class="section" id="section5">
+          <div class="fruit-images">
+            <div class="image-one fruit-image"><img src="imgs/dai-trang.png" alt="apple-image"></div>
+            <div class="image-two fruit-image"><img src="imgs/da-day.png" alt="apple-image"></div>
+            <div class="image-three fruit-image"><img src="imgs/can-tay.png" alt="apple-image"></div>
+            <div class="image-four fruit-image"><img src="imgs/gan.png" alt="apple-image"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+    <!-- use -->
+    <div class="how-to-use">
+      <h2>Hướng Dẫn Sử Dụng</h2>
+      <div class="step">
+        <div class="step1 step-by-step">
+          <img src="/imgs/step1.png">
+          <div class="use">Bước 1: Giật nắp</div>
+          <img class="arrow" src="imgs/arrow.png">
+        </div>
+        <div class="step2 step-by-step">
+          <img src="imgs/step2.png">
+          <div class="use">Bước 2: Xé gói</div>
+          <img class="arrow" src="imgs/arrow.png">
+        </div>
+        <div class="step3 step-by-step">
+          <img src="imgs/step3.png">
+          <div class="use">Bước 3: Đổ vào lon</div>
+          <img class="arrow" src="imgs/arrow.png">
+        </div>
+        <div class="step4 step-by-step">
+          <img src="/imgs/step4.png">
+          <div class="use">Bước 4: Khuấy đều</div>
+        </div>
+      </div>
+    </div>
+  <!-- Product -->
+  <div class="section-product">
+    <section id="shipping" class="wave">
+      <img src="imgs/free-shipping.png" alt="free shiping">
+      <div id="shipping-popup" class="shipping-popup">
+        FREE SHIP CHO ĐƠN >100K, BÁN KÍNH 5KM
+      </div>
+    </section>
+    <section class="coc-lon">
+      <div class="coc-lon-title">
+        <h3>Thức uống độc quyền</h3>
+        <h2>HEBANUBE</h2>
+      </div>
+      <div class="coc-lon-container">
+        <div class="coc">
+          <img src="imgs/coc-detoxhub.png" alt="coc detoxhub">
+          <h3>40K - 200ML</h3>
+        </div>
+        <div class="lon">
+          <img src="imgs/lon-detoxhub.png" alt="lon detoxhub">
+          <h3>50K - 300ML</h3>
+        </div>
+      </div>
+      <div class="mui-ten">
+        <img src="imgs/mui-ten.png" alt="mui ten">
+      </div>
+    </section>
+    <section class="product-slider">
+      <h3>WAKEUP DETOX DEE</h3>
+      <h2>tinh chất detox vitrue</h2>
+      <button class="prev" onclick="slide(-1)">&#10094;</button>
+      <div class="slider-container">
+          <div class="product">
+              <img src="imgs/can-tay.png" alt="can tay">
+              <h3>Vitrue Celery</h3>
+              <p>Short description of product 1.</p>
+          </div>
+          <div class="product">
+              <img src="imgs/gan.png" alt="detox gan">
+              <h3>Vitrue Detox Gan</h3>
+              <p>Short description of product 2.</p>
+          </div>
+          <div class="product">
+              <img src="imgs/phoi.png" alt="detox phoi">
+              <h3>Vitrue Detox Phổi</h3>
+              <p>Short description of product 3.</p>
+          </div>
+          <div class="product">
+              <img src="imgs/noni.png" alt="noni">
+              <h3>Vitrue Noni</h3>
+              <p>Short description of product 4.</p>
+          </div>
+          <div class="product">
+              <img src="imgs/dai-trang.png" alt="detox dai trang">
+              <h3>Vitrue Detox Đại Tràng</h3>
+              <p>Short description of product 5.</p>
+          </div>
+          <div class="product">
+              <img src="imgs/da-day.png" alt="detox da day">
+              <h3>Vitrue Detox Dạ Dày</h3>
+              <p>Short description of product 6.</p>
+          </div>
+      </div>
+      <button class="next" onclick="slide(1)">&#10095;</button>
+    </section>
+  </div>
+  <!-- adds -->
+  <div class="section-add">
+    <div class="road-map">
+      <div class="text-container" id="text-container"></div>
+      <div class="xe-day">
+        <img src="imgs/banh-xe.png" alt="banh-xe" class="banh-xe">
+        <img src="/imgs/xe-day.png" alt="xe-day" class="xe-khong-banh">
+      </div>
+    </div>
+    <div class="section-area">
+      <div class="scroll-map">
+        <div class="map" id="map1" onclick="showMap('map1-iframe')">
+            <div class="line-map">
+                <div class="icon-map"><strong>1. </strong></div>
+                <div><strong>Cơ sở 1: Duy Tân, Hà Nội</strong></div>
+            </div>
+            <div class="line-map">
+                <div class="icon-map"><strong><i class="fa fa-map-marker" aria-hidden="true"></i></strong></div>
+                <div class="font-15">A5/D21 Ngõ 11 Duy Tân, Cầu Giấy</div>
+            </div>
+            <div class="line-map">
+                <div class="icon-map"><strong><i class="fa fa-phone" aria-hidden="true"></i></strong></div>
+                <div class="text-danger">Hotline: 0792.002.185</div>
+            </div>
+            <div class="line-map">
+                <div class="icon-map"><strong><i class="fas fa-store icon" aria-hidden="true"></i></strong></div>
+                <div class="text-danger-1">Mở cửa: 6:00 – 18:00 (Từ thứ 2 - thứ 6)</div>
+            </div>
+        </div>
+        <div class="map" id="map2" onclick="showMap('map2-iframe')">
+            <div class="line-map">
+                <div class="icon-map"><strong>2. </strong></div>
+                <div><strong>Cơ sở 2: Duy Tân, Hà Nội</strong></div>
+            </div>
+            <div class="line-map">
+                <div class="icon-map"><strong><i class="fa fa-map-marker" aria-hidden="true"></i></strong></div>
+                <div class="font-15">68 Duy Tân, Cầu Giấy</div>
+            </div>
+            <div class="line-map">
+                <div class="icon-map"><strong><i class="fa fa-phone" aria-hidden="true"></i></strong></div>
+                <div class="text-danger">Hotline: 0792.002.185</div>
+            </div>
+            <div class="line-map">
+                <div class="icon-map"><strong><i class="fas fa-store icon" aria-hidden="true"></i></strong></div>
+                <div class="text-danger-1">Mở cửa: 6:00 – 18:00 (Từ thứ 2 - thứ 6)</div>
+            </div>
+        </div>
+        <div class="map" id="map1" onclick="showMap('map1-iframe')">
+          <div class="line-map">
+              <div class="icon-map"><strong>3. </strong></div>
+              <div><strong>Cơ sở 3: COMING SOON!</strong></div>
+          </div>
+        </div>
+        <div class="map" id="map1" onclick="showMap('map1-iframe')">
+          <div class="line-map">
+              <div class="icon-map"><strong>4. </strong></div>
+              <div><strong>Cơ sở 4: COMING SOON!</strong></div>
+          </div>
+        </div>
+        <div class="map" id="map1" onclick="showMap('map1-iframe')">
+          <div class="line-map">
+              <div class="icon-map"><strong>5. </strong></div>
+              <div><strong>Cơ sở 5: COMING SOON!</strong></div>
+          </div>
+        </div>
+      </div>
+      <div class="detoxhub-map">
+        <iframe id="map1-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.079504813453!2d105.78155267596972!3d21.029504587751685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab00352c83f1%3A0xcaeabc6fe16f7cad!2sDetox%20Hub%20-%20Wakeup%20Detox%20Dee!5e0!3m2!1svi!2s!4v1719913824610!5m2!1svi!2s" style="display:block;border:none;"></iframe>
+        <iframe id="map2-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.04076613462!2d105.78169607596973!3d21.031054787698487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab4c82b4c83f%3A0x3bebe5db67824f2f!2zNjggUC4gRHV5IFTDom4sIEThu4tjaCBW4buNbmcgSOG6rXUsIEPhuqd1IEdp4bqleSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1719913881746!5m2!1svi!2s" style="display:none;border:none;"></iframe>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+  <footer class="footer-main">
+    <div class="main"></div>
+    <div class="footer">
+        <div class="bubbles">            
+        </div>
+        <div class="content">
+            <div>
+                <h3>Thông tin liên hệ</h3>
+                <div>
+                    <b>Hotline: 0792.002.185</b>
+                </div>
+                <div>
+                    <b>Giờ mở cửa: 6h - 18h (Thứ 2 - Thứ 6)</b>
+                </div>
+                <div>
+                    <b>Địa chỉ</b>
+                </div>
+                <div>
+                    <b>Cơ sở 1: A5/D21 Ngõ 11 Duy Tân, Cầu Giấy, Hà Nội</b>
+                </div>
+                <div>
+                    <b>Cơ sở 2: 68 Duy Tân,Cầu Giấy, Hà Nội</b>
+                </div>
+            </div>
+            <div class="footer-static-content">
+              <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdetoxhub.vitrue&tabs&width=340&height=130&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=false&appId" width="340" height="130" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div>
+                <a onclick="scrollToTop()" class="image" style="background-image: url('/imgs/DetoxHub-2.png'); cursor: pointer;"></a>
+                <p style="text-align: center; font-weight: bold;">DETOX HUB</p>
+            </div>
+        </div>
+    </div>
+    <svg style="position:fixed; top:100vh;">
+        <defs>
+            <filter id="blob">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="blob"></feColorMatrix>
+            </filter>
+        </defs>
+    </svg>
+  </footer>
+  <!-- Call + Zalo -->
+  <div class="quick-alo-phone quick-alo-green quick-alo-show" id="quick-alo-phoneIcon">
+    <a href="tel:0792002185" title="Liên hệ nhanh">
+      <div class="quick-alo-ph-circle"></div>
+      <div class="quick-alo-ph-circle-fill"></div>
+      <div class="quick-alo-ph-img-circle"></div>
+    </a>
+  </div>
+  <a class="msg-zalo" rel="nofollow noopener" href="https://zalo.me/0792002185" target="_blank">
+    <span>
+      <img src="https://vitruehealth.vn/wp-content/themes/vitruevn/images/icons/zalo.svg" alt="zalo img" class="lazyloaded" data-ll-status="loaded">
+      <noscript>
+        <img src="https://vitruehealth.vn/wp-content/themes/vitruevn/images/icons/zalo.svg" alt="zalo img">
+      </noscript>
+    </span>
+  </a>
+  <script src="funs.js"></script>
+</body>
