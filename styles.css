@@ -84,6 +84,7 @@ header {
   display: flex;
   justify-content: center;
   max-height: 70px;
+  transition: top 0.5s;
 }
 .logo {
   flex: 1;
@@ -375,14 +376,6 @@ button {
     transform: translateX(75vw);
   }
 }
-/* @keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-} */
 @keyframes blink {
   50% {
     opacity: 0;
@@ -391,26 +384,7 @@ button {
 
 /* Map Arena */
 .section-add {
-  /* height: 100vh; */
   background-color: #F6F6F6;
-  padding-top: 20px;
-}
-.road-map {
-  /* height: 40vh; */
-  background-image: url(imgs/street.png);
-  position: relative;
-  border-radius: 0 20%;
-  border: solid 10px #f35151;
-  margin: 0 30px;
-}
-.text-container {
-  position: absolute;
-  font-size: 5rem;
-  top: 38%;
-  left: 0%;
-  font-weight: bold;
-  font-style: italic;
-  color: #f35151;
 }
 .caret {
   display: inline-block;
@@ -418,35 +392,8 @@ button {
   background-color: black;
   animation: blink 1s steps(1) infinite;
 }
-.xe-day {
-  max-width: 40vh;
-  aspect-ratio: 1/1;
-  height: auto;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  position: relative;
-}
-.xe-day img {
-  position: absolute;
-  object-fit: cover;
-}
-.xe-day.in-view {
-  opacity: 1;
-  animation: moveLeftToRight 5s linear forwards;
-}
-.xe-khong-banh {
-z-index: 1;
-}
-.banh-xe {
-z-index: 2;
-max-width: 11vh;
-top: 59.5%;
-left: 22%;
-animation: rotate 5s linear infinite;
-}
 .section-area {
 display: flex;
-/* height: 60vh; */
 margin: 10px 30px 20px;
 }
 .scroll-map {
@@ -1263,4 +1210,132 @@ button.next {
 }
 li {
   list-style-type: none;
+}
+.copyright {
+  text-align: center;
+  background: #e54052;
+  color: white;
+  line-height: 3;
+}
+/* Time - Alarm */
+#clock {
+  font-family: 'Share Tech Mono', monospace;
+  color: #ffffff;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #daf6ff;
+  text-shadow: 0 0 20px rgb(230, 10, 157), 0 0 20px rgba(10, 175, 230, 0);
+}
+#clock p {
+  margin: 0;
+}
+#clock .time {
+  letter-spacing: 0.05em;
+  font-size: 80px;
+  padding: 5px 0;
+}
+
+#clock .date {
+  letter-spacing: 0.1em;
+  font-size: 1.5em;
+}
+.ClockHolder {
+  width: 400px;
+  aspect-ratio: 2.5/1;
+  background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%);
+  padding: 30px 50px;
+  border-radius: 15px;
+  border: 3px solid #ED5565;
+  position: relative;
+}
+.ClockHolder::after {
+  content: " ";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  width: 70%;
+  height: 15px;
+  background-color: #ED5565;
+  transform: translate(-50%, 0);
+  border-radius: 3px 3px 8px 8px;
+}
+.ClockHolder::before {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 10px;
+  background-color: #00000077;
+  bottom: -25px;
+  left: -5%;
+  border-radius: 100%;
+  filter: blur(5px);
+}
+.title-clock {
+  text-align: center;
+}
+.title-clock h2 {
+  line-height: 2;
+  font-size: 5rem;
+  color: var(--apple-can);
+}
+.container-clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+ul li {
+  list-style-type: none;
+}
+.countdown-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80px;
+  height: 80px;
+  border-radius: 20%;
+}
+.countdown-timer {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  color: #ED5565;
+}
+.countdown {
+  text-align: center;
+}
+.container {
+  padding-bottom: 2vh;
+  margin: 20px 30px;
+  border: solid 2px #f35151;
+  border-radius: 15px;
+}
+.product-clock div img {
+  max-width: 120px;
+}
+.product-clock div img:first-child {
+  max-width: 120px;
+  filter: drop-shadow(0em 0.4em 0.3em rgba(0, 0, 30, 0.5));
+}
+.container-clock li img {
+  max-width: 100px;
+}
+#mui-ten-2 {
+  max-width: 150px;
+}
+.title-slogun {
+  font-size: 1.5rem;
+  color: var(--apple-can);
+  text-transform: uppercase;
+}
+.vitrue-goi {
+  filter: drop-shadow(0em 0.4em 0.3em rgba(0, 0, 30, 0.5));
+}
+.alarm {
+  max-width: 7rem;
 }

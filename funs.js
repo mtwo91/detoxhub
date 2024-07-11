@@ -149,48 +149,6 @@ function showMap(mapId) {
   document.getElementById('map2-iframe').style.display = 'none';
   document.getElementById(mapId).style.display = 'block';
 }
-// Inview Left To Right
-document.addEventListener('DOMContentLoaded', function() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-      }
-    });
-  });
-
-  const animatedElement = document.querySelector('.xe-day');
-  observer.observe(animatedElement);
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-  const text = "DETOX HUB BEHIND YOU!";
-  const textContainer = document.getElementById('text-container');
-  let index = 0;
-
-  function type() {
-    if (index < text.length) {
-      textContainer.textContent += text.charAt(index);
-      index++;
-      setTimeout(type, 250);
-    } else {
-      const caret = document.createElement('span');
-      caret.classList.add('caret');
-      textContainer.appendChild(caret);
-    }
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        type();
-        observer.unobserve(entry.target);
-      }
-    });
-  });
-
-  observer.observe(textContainer);
-});
 
 // Footer
 for (var i = 0; i < 128; i++) {
@@ -323,3 +281,136 @@ jQuery(document).ready(function($){
 	    }
     });
 });
+
+// scroll down hind the header
+let lastScrollTop = 0;
+const header = document.querySelector('header');
+const headerHeight = header.offsetHeight;
+
+window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        header.style.top = `-${headerHeight}px`;
+    } else {
+        header.style.top = '0';
+    }
+    lastScrollTop = scrollTop;
+});
+
+// Time - Countdown
+var clock = new Vue({
+  el: '#clock',
+  data: {
+      time: '',
+      date: ''
+  }
+});
+
+var week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+var timerID = setInterval(updateTime, 1000);
+updateTime();
+function updateTime() {
+  var cd = new Date();
+  clock.time = zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2) + ':' + zeroPadding(cd.getSeconds(), 2);
+  clock.date = zeroPadding(cd.getFullYear(), 4) + '-' + zeroPadding(cd.getMonth()+1, 2) + '-' + zeroPadding(cd.getDate(), 2) + ' ' + week[cd.getDay()];
+};
+
+function zeroPadding(num, digit) {
+  var zero = '';
+  for(var i = 0; i < digit; i++) {
+      zero += '0';
+  }
+  return (zero + num).slice(-digit);
+}
+
+function getNextDailyTime(targetHour, targetMinute) {
+  // Lấy thời gian hiện tại
+  var now = new Date();
+  
+  // Tạo một đối tượng Date cho thời điểm hẹn hôm nay
+  var nextTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), targetHour, targetMinute, 0, 0);
+  
+  // Nếu thời gian hẹn hôm nay đã qua, đặt thời gian hẹn là ngày mai
+  if (now > nextTime) {
+      nextTime.setDate(nextTime.getDate() + 1);
+  }
+
+  return nextTime.getTime();
+}
+
+// Sử dụng hàm với giờ và phút bạn muốn
+var countDownDates = [
+  getNextDailyTime(7, 0),
+  getNextDailyTime(10, 0),
+  getNextDailyTime(14, 0),
+  getNextDailyTime(16, 0),
+  getNextDailyTime(18, 0)
+];
+var eventElements = [
+  document.getElementById("7h"),
+  document.getElementById("10h"),
+  document.getElementById("14h"),
+  document.getElementById("16h"),
+  document.getElementById("18h")
+];
+var eventTitle = [
+  document.getElementById("title-1"),
+  document.getElementById("title-2"),
+  document.getElementById("title-3"),
+  document.getElementById("title-4"),
+  document.getElementById("title-5")
+];
+
+// Function to update the countdown
+function updateCountdown() {
+  var now = new Date().getTime();
+  var closestCountdownIndex = -1;
+  var closestDistance = Infinity;
+
+  // Find the closest countdown date
+  for (var i = 0; i < countDownDates.length; i++) {
+      var distance = countDownDates[i] - now;
+      if (distance > 0 && distance < closestDistance) {
+          closestDistance = distance;
+          closestCountdownIndex = i;
+      }
+  }
+
+  // If no valid countdown is found, all dates have passed
+  if (closestCountdownIndex === -1) {
+      document.getElementById("hours").innerHTML = "00";
+      document.getElementById("minutes").innerHTML = "00";
+      document.getElementById("seconds").innerHTML = "00";
+      return;
+  }
+
+  // Calculate time remaining
+  var distance = closestDistance;
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result
+  document.getElementById("hours").innerHTML = hours < 10 ? '0' + hours : hours;
+  document.getElementById("minutes").innerHTML = minutes < 10 ? '0' + minutes : minutes;
+  document.getElementById("seconds").innerHTML = seconds < 10 ? '0' + seconds : seconds;
+
+  // Show the current event and hide others
+  for (var i = 0; i < eventElements.length; i++) {
+    if (i === closestCountdownIndex) {
+        eventElements[i].style.display = "block";
+        eventTitle[i].style.display = "block";
+    } else {
+        eventElements[i].style.display = "none";
+        eventTitle[i].style.display = "none";
+    }
+}    
+  // If the countdown is over, reset the interval
+  if (distance < 0) {
+      clearInterval(x);
+  }
+}
+
+// Update the countdown every second
+var x = setInterval(updateCountdown, 1000);

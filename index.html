@@ -5,11 +5,13 @@
     <title>Detox Hub</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="responsive.css">
+    <link rel="icon" href="imgs/favicon.png" type="image/png">
     <script src="gsap.all.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://unpkg.com/swiper/js/swiper.js">  </script> 
     <script src="https://unpkg.com/swiper/js/swiper.min.js">  </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   </head>
 <body>
   <!-- header -->
@@ -207,12 +209,70 @@
   </div>
   <!-- adds -->
   <div class="section-add">
-    <div class="road-map">
-      <div class="text-container" id="text-container"></div>
-      <div class="xe-day">
-        <img src="imgs/banh-xe.png" alt="banh-xe" class="banh-xe">
-        <img src="/imgs/xe-day.png" alt="xe-day" class="xe-khong-banh">
+    <div class="container">
+      <div class="title-clock">
+          <h2><img class="alarm" src="/imgs/Alarm_Clock.gif" alt="alarm">WAKEUP DETOX DEE</h2>
+          <div class="title-slogun">
+            <h3 id="title-1">Khởi động ngày mới!</h3>
+            <h3 id="title-2">Làm mới cơ thể!</h3>
+            <h3 id="title-3">Tái tạo năng lượng!</h3>
+            <h3 id="title-4">Thư giãn cân bằng!</h3>
+            <h3 id="title-5">Phục hồi thể chất!</h3>
+          </div>
       </div>
+      <ul class="container-clock">
+          <li class="ClockHolder">
+              <div id="clock">
+                  <p class="date">{{ date }}</p>
+                  <p class="time">{{ time }}</p>
+              </div>
+          </li>
+          <li class="countdown">
+              <div class="tltle-countdown">Sắp đến giờ detox rồi!</div>
+                  <div class="countdown-item hours">
+                      <span id="hours" class="countdown-timer"></span>
+                      <span class="countdown-text">Giờ</span>
+                  </div>
+                  <div class="countdown-item minute">
+                      <span id="minutes" class="countdown-timer"></span>
+                      <span class="countdown-text">Phút</span>
+                  </div>
+                  <div id="" class="countdown-item second">
+                      <span id="seconds" class="countdown-timer"></span>
+                      <span class="countdown-text">Giây</span>
+                  </div>
+          </li>
+          <li>
+            <div class="product-clock">
+              <div id="7h">
+                <img src="/imgs/wakeup.png" alt="wakeup">
+              </div>
+              <div id="10h">
+                <img src="imgs/push.png" alt="push">
+              </div>
+              <div id="14h">
+                <img src="imgs/powerup.png" alt="powerup">
+              </div>
+              <div id="16h">
+                <img src="imgs/balance.png" alt="balance">
+              </div>
+              <div id="18h">
+                <img src="imgs/recovery.png" alt="recovery">
+              </div>
+            </div>
+          </li>
+          <li>
+            <img id="mui-ten-2" src="imgs/mui-ten-2.png" alt="mix">
+          </li>
+          <li class="vitrue-goi">
+            <img src="/imgs/da-day.png" alt="da day">
+            <img src="/imgs/can-tay.png" alt="can tay">
+            <img src="imgs/dai-trang.png" alt="dai trang">
+            <img src="imgs/gan.png" alt="gan">
+            <img src="imgs/phoi.png" alt="phoi">
+            <img src="imgs/noni.png" alt="noni">
+          </li>
+      </ul>
     </div>
     <div class="section-area">
       <div class="scroll-map">
@@ -241,7 +301,7 @@
             </div>
             <div class="line-map">
                 <div class="icon-map"><strong><i class="fa fa-map-marker" aria-hidden="true"></i></strong></div>
-                <div class="font-15">68 Duy Tân, Cầu Giấy</div>
+                <div class="font-15">16 Duy Tân, Cầu Giấy</div>
             </div>
             <div class="line-map">
                 <div class="icon-map"><strong><i class="fa fa-phone" aria-hidden="true"></i></strong></div>
@@ -273,7 +333,7 @@
       </div>
       <div class="detoxhub-map">
         <iframe id="map1-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.079504813453!2d105.78155267596972!3d21.029504587751685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab00352c83f1%3A0xcaeabc6fe16f7cad!2sDetox%20Hub%20-%20Wakeup%20Detox%20Dee!5e0!3m2!1svi!2s!4v1719913824610!5m2!1svi!2s" style="display:block;border:none;"></iframe>
-        <iframe id="map2-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.04076613462!2d105.78169607596973!3d21.031054787698487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab4c82b4c83f%3A0x3bebe5db67824f2f!2zNjggUC4gRHV5IFTDom4sIEThu4tjaCBW4buNbmcgSOG6rXUsIEPhuqd1IEdp4bqleSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1719913881746!5m2!1svi!2s" style="display:none;border:none;"></iframe>
+        <iframe id="map2-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.0466363367377!2d105.78324147596977!3d21.030819887706585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135aba335cd1943%3A0x8b486f9fccf06f91!2zUGjhu58gQ3Xhu5FuIEjGsMahbmcgTWFpIDE2IER1eSBUw6JuIEPhuqd1IEdp4bqleQ!5e0!3m2!1svi!2s!4v1720598964288!5m2!1svi!2s" style="display:none;border:none;"></iframe>
       </div>
     </div>
   </div>
@@ -299,7 +359,7 @@
                     <b>Cơ sở 1: A5/D21 Ngõ 11 Duy Tân, Cầu Giấy, Hà Nội</b>
                 </div>
                 <div>
-                    <b>Cơ sở 2: 68 Duy Tân,Cầu Giấy, Hà Nội</b>
+                    <b>Cơ sở 2: 16 Duy Tân,Cầu Giấy, Hà Nội</b>
                 </div>
             </div>
             <div class="footer-static-content">
@@ -336,5 +396,6 @@
       </noscript>
     </span>
   </a>
+  <p class="copyright"> Bản quyền thuộc về Công ty Cổ phần AnvyHerb</p>
   <script src="funs.js"></script>
 </body>

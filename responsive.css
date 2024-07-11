@@ -1,30 +1,30 @@
 /*.......... Responsive.............. */
 @media screen and (max-width: 1550px) {
     h1 {
-      font-size: 350px !important;
+      font-size: 250px !important;
     }
     .cane-image {
       max-width: 15vw;
     }
     .image-one {
-      max-width: 250px;
+      max-width: 12vw;
     }
     .image-two {
-      max-width: 215px;
+      max-width: 10vw;
       left: 22%;
-      top: 10%;
+      top: 15%;
     }
     .image-three {
-      max-width: 180px;
+      max-width: 10vw;
     }
     .image-four {
-      max-width: 260px;
+      max-width: 11vw;
       right: 40px;
     }
   }
   @media screen and (max-width: 1199px) {
     h1 {
-      font-size: 300px !important;
+      font-size: 200px !important;
     }
     .cane-image::after {
       width: 150%;
@@ -47,7 +47,7 @@
   }
   @media screen and (max-width: 991px) {
     h1 {
-      font-size: 240px !important;
+      font-size: 160px !important;
     }
     .cane-image {
       max-width: 250px;
@@ -55,7 +55,8 @@
     button {
       height: 80px;
       width: 80px;
-      top: 90%;
+      top: 60%;
+      opacity: 0.7;
     }
     .image-one {
       max-width: 180px;
@@ -282,5 +283,36 @@
     }
     .coc-lon-container h3 {
       margin: 0 120px;
+    }
+    .title-clock h2 {
+      line-height: 1;
+      font-size: 3rem;
+    }
+    .container-clock {
+      display: inline-block;
+    }
+    .ClockHolder::before {
+      width: 100%;
+    }
+    .countdown {
+      padding-top: 30px;
+    }
+    .product-clock {
+      text-align: center;
+    }
+    .container-clock li:nth-child(4) {
+      text-align: center;
+      transform: rotate(90deg);
+    }
+    .vitrue-goi {
+      text-align: center;
+    }
+    .ClockHolder {
+      width: auto;
+    }
+    .container {
+      margin: 20px 0px;
+      border: solid 2px #f35151;
+      border-radius: 15px;
     }
   }
